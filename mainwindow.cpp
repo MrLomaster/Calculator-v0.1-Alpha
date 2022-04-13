@@ -22,8 +22,28 @@ void MainWindow::on_label_2_linkActivated(const QString &link)
 
 void MainWindow::on_pushButton_13_clicked()
 {
+    QString a2 = ui->label_2->text();
+    switch (simi)
+    {
+        case 1:
+            ui->label_2->setText(QString::number(a1.toInt() + a2.toInt()));
+            break;
+        case 2:
+            ui->label_2->setText(QString::number(a1.toInt() - a2.toInt()));
+            break;
+        case 3:
+            ui->label_2->setText(QString::number(a1.toInt() * a2.toInt()));
+            break;
+        case 4:
+            ui->label_2->setText(QString::number(a1.toInt() / a2.toInt()));
+            break;
+    }
 
+    QString a3 = QString::number(a1.toInt() + a2.toInt());
+    check = true;
+    ui->label_2->setText(QString::number(a1.toInt() + a2.toInt()));
 }
+
 void MainWindow::on_pushButton_1_clicked()
 {
 
@@ -189,5 +209,69 @@ void MainWindow::on_pushButton_0_clicked()
             ui->label_2->setText(ui->label_2->text() + "0");
         }
 
+    }
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    if (check == true)
+    {
+        ui->label_2->setText("А цифры...");
+    }
+    if (check == false)
+    {
+        a1 = ui->label_2->text();
+        sim = '+';
+        simi = 1;
+        ui->label_2->setText("0");
+        check = true;
+    }
+}
+
+void MainWindow::on_pushButton_10_clicked()
+{
+    if (check == true)
+    {
+        ui->label_2->setText("А цифры...");
+    }
+    if (check == false)
+    {
+        a1 = ui->label_2->text();
+        sim = '-';
+        simi = 2;
+        ui->label_2->setText("0");
+        check = true;
+    }
+}
+
+void MainWindow::on_pushButton_11_clicked()
+{
+    if (check == true)
+    {
+        ui->label_2->setText("А цифры...");
+    }
+    if (check == false)
+    {
+        a1 = ui->label_2->text();
+        sim = '*';
+        simi = 3;
+        ui->label_2->setText("0");
+        check = true;
+    }
+}
+
+void MainWindow::on_pushButton_12_clicked()
+{
+    if (check == true)
+    {
+        ui->label_2->setText("А цифры...");
+    }
+    if (check == false)
+    {
+        a1 = ui->label_2->text();
+        sim = '/';
+        simi = 4;
+        ui->label_2->setText("0");
+        check = true;
     }
 }

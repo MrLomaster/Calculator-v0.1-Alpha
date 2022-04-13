@@ -13,6 +13,11 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    bool check = true;
+//    int znak;
+    QString a1, a2;
+    int simi;
+    char sim;
     ~MainWindow();
 
 private slots:
@@ -39,6 +44,14 @@ private slots:
     void on_pushButton_9_clicked();
 
     void on_pushButton_0_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_pushButton_10_clicked();
+
+    void on_pushButton_11_clicked();
+
+    void on_pushButton_12_clicked();
 
 private:
     Ui::MainWindow *ui;
